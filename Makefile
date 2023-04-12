@@ -15,7 +15,7 @@ requirements.txt: | requirements.in
 	test -d __venv && rm -Rf __venv || true
 	$(PYTHON) -m venv __venv
 	./__venv/bin/python -m pip install pip-tools
-	./__venv/bin/python -m piptools compile --no-header --annotation-style line --output-file requirements.txt $<
+	./__venv/bin/python -m piptools compile --no-header --annotation-style line --resolver=backtracking --output-file requirements.txt $<
 	rm -Rf __venv
 
 clean:
