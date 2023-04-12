@@ -9,7 +9,7 @@ result = subprocess.run(
     capture_output=True,
     text=True
 )
-chromedriver_version = result.stdout.split(".")[0].split(" ")[1]
+chromedriver_version = int(result.stdout.split(".")[0].split(" ")[1])
 
 chromedriver_copy_path = f"{os.getcwd()}/chromedriver"
 shutil.copy("/usr/bin/chromedriver", chromedriver_copy_path)
